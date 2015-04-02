@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Garbage</title>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<link rel="stylesheet" type="text/css" href="Map.css">
+    	
+    	<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
+			function initialize() {
+				var mapProp = {
+    				center:new google.maps.LatLng(55.861629,-4.242531),
+    				zoom:15,
+    				mapTypeId:google.maps.MapTypeId.ROADMAP
+  				};
+  				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+	</head>
+	
+	<body>
+		<header id="header"><h1>Map</h1></header>
+		<div id="googleMap"></div>
+	</body>
+</html>
