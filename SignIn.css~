@@ -20,11 +20,17 @@ form {
 	text-align: center
 }
 
+#registerDiv {
+	text-align: center;
+	padding: 2rem;
+}
+
+
 header {
 	
     color: white;
     text-align: center;
-    padding-bottom: 0.2em; 
+    padding-bottom: 0.2rem; 
     border: 1rem;
     font-family: Impact, Charcoal, sans-serif;
     font-size: 2rem;

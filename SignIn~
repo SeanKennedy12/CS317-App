@@ -1,25 +1,25 @@
 <html>
 	<head>
-		<title>Garbage</title>
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="SignIn.css">
 	</head>
 	
 	<body>
-<<<<<<< HEAD
+		<a href="index.html"><img src="Images/Home.png" style="width:70px;height:70px;border:0"></a>
 		<header><h1>Sign In</h1></header>
 		
 		<form action="SignIn.php">
-			Username: </ br>
-			<input type="text" id="username" placeholder="Username" required>
-			Password: </ br>
-			<input type="password" id="password" placeholder="Password" required>
+			<label>Username: </label>
+			<input type="text" id="username" placeholder="Username" required><br>
+			<label>Password: </label>
+			<input type="password" id="password" placeholder="Password" required><br>
 			<input type="submit" value="Login">
 		</form>
-=======
-		<button type="button" onclick="location.href='index.html'">Home</button>
-		<header><h1>Sign In</h1></header>
->>>>>>> e3fd9be51ed50807c9bcc5eb2f12b7aa8c9c5c48
+
+		<div id="registerDiv">
+			Not a member?
+			<a href="Register.html">Register</a>
+		</div>
 	</body>
 </html>

@@ -10,11 +10,16 @@
 		<header><h1>Sign In</h1></header>
 		
 		<form action="SignIn.php">
-			Username: </ br>
-			<input type="text" id="username" placeholder="Username" required>
-			Password: </ br>
-			<input type="password" id="password" placeholder="Password" required>
-			<input type="submit" value="Login">
+			<label>Username: </label>
+			<input type="text" id="username" placeholder="Username" required><br>
+			<label>Password: </label>
+			<input type="password" id="password" placeholder="Password" required><br>
+			<input type="submit" value="Login" id="loginButton">
 		</form>
+
+		<div id="registerDiv">
+			Not a member?
+			<a href="Register.html">Register</a>
+		</div>
 	</body>
 </html>

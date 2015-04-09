@@ -20,7 +20,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
-	height: 75%;
+	height: 70%;
 }
 
 header {
