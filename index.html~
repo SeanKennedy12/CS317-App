@@ -15,7 +15,6 @@
 	</head>
 
 	<body>
-		<button type="button" onclick="alert('Hello world!')">Click Me!</button>
 		<header id="header"><h1>Garbage</h1></header>
 		<div id="mainDiv">
 			<p class="mainDivItem" id="signIn">Sign In</p>
