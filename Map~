@@ -17,6 +17,7 @@
 				var marker;
 				map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 					
+				document.getElementById("marker").addEventListener(addMarker);
 
 				google.maps.event.addListener(map, 'click', function(event) {
                   			placeMarker(event.latLng);
