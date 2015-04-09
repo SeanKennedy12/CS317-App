@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Garbage</title>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<link rel="stylesheet" type="text/css" href="About.css">
+	</head>
+	
+	<body onload="aboutBackFunction()">
+   <nav id="nav" class="">
+
+    <p id="AboutBack">
+        <img width="64" height="64" alt="Show" src="Images/back-512.png"></img>
+    </p>
+   </nav>
+		<header id="header"><h1>About</h1></header>
+                <script>
+                    function aboutBackFunction(){
+                    document.getElementById("AboutBack").addEventListener("click", function(){
+                        window.location.href = "index.html"; });
+                    };
+                </script>
+	</body>
+</html>
