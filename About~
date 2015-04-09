@@ -1,13 +1,12 @@
 <html>
 	<head>
-		<button type="button" onclick="location.href='index.html'">Home</button>
 		<title>Garbage</title>
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    	<link rel="stylesheet" type="text/css" href="Settings.css">
+    	<link rel="stylesheet" type="text/css" href="About.css">
 	</head>
 	
 	<body>
-		<header><h1>Settings</h1></header>
+		<header id="header"><h1>About</h1></header>
 	</body>
 </html>
