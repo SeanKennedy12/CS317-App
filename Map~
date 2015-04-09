@@ -1,5 +1,7 @@
 <html>
 	<head>
+		<a href="index.html"><img src="Images/Home.png" style="width:70px;height:70px;border:0"></a>
+		<header id="header"><h1>Garbage</h1></header>
 		<title>Garbage</title>
 		<meta charset="utf-8">
 	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
