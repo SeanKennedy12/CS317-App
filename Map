@@ -5,6 +5,7 @@
 	    	<link rel="stylesheet" type="text/css" href="Map.css">
 	    	
 	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 			<script>
 				var map;
 				var markers = [];
@@ -19,10 +20,26 @@
 
 					google.maps.event.addListener(map, 'click', function(event) {
 		          			placeMarker(event.latLng);
-		         		});
+		         	});
+						
+					$.get("LoadMarkers.php", function(data){
+						console.log("Preparing to load dataset... Data: " + data);
+						for(i = 0; i < data.length; i++){
+							console.log("Loading dataset: " + data);
+							console.log("Loaded (lat="+parseFloat(data[i][0])+", lng="+parseFloat(data[i][1])+")");
+							placeMarker(new google.maps.LatLng(parseFloat(data[i][0]), parseFloat(data[i][1])));
+						}
+					});
 				}
 
 				 function placeMarker(location) {
+				    var loc = {lat: location.lat(), lng: location.lng()};
+					$.post("SaveMarker.php", loc, function(data){
+						console.log("Saving data: " + loc);
+						console.log("Returned: " + data);
+						console.log("Saved marker location (lat="+location.lat()+",lng="+location.lng()+") to database");
+					});
+				 
 			      		var marker = new google.maps.Marker({
 						position: location,
 			       			map: map,
@@ -42,9 +59,8 @@
 							}
 						}
 					}*/
-			    	}
-
-
+			    }
+					
 				google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
