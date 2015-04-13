@@ -11,9 +11,9 @@
 		
 		<form action="SignIn.php">
 			<label>Username: </label>
-			<input type="text" id="username" placeholder="Username" required><br>
+			<input type="text" id="login_username" placeholder="Username" required><br>
 			<label>Password: </label>
-			<input type="password" id="password" placeholder="Password" required><br>
+			<input type="password" id="login_password" placeholder="Password" required><br>
 			<input type="submit" value="Login" id="loginButton">
 		</form>
 
