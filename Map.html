@@ -3,9 +3,11 @@
 		<meta charset="utf-8">
 	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	    	<link rel="stylesheet" type="text/css" href="Map.css">
-	    	
+			
 	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+			<script src="Misc.js"></script>
 			<script>
 				var map;
 				var markers = [];
@@ -19,7 +21,9 @@
 					map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 					google.maps.event.addListener(map, 'click', function(event) {
-		          			placeMarker(event.latLng);
+							var user = getCookie("username");
+							if(!user || user.length === 0) user = "anonymous";
+		          			placeMarker(event.latLng, user);
 		         	});
 						
 					$.get("LoadMarkers.php", function(data){
@@ -29,24 +33,28 @@
 						for(i = 0; i < pos.markers.length; i++){
 							var current_lat = parseFloat(pos.markers[i].lat);
 							var current_lng = parseFloat(pos.markers[i].lng);
+							var current_username = pos.markers[i].username;
 							console.log("Loaded (lat="+current_lat+", lng="+current_lng+")");
-							placeMarker(new google.maps.LatLng(current_lat, current_lng));
+							placeMarker(new google.maps.LatLng(current_lat, current_lng), current_username);
 						}
 					});
 				}
 
-				 function placeMarker(location) {
-				    var loc = {lat: location.lat(), lng: location.lng()};
+				 function placeMarker(location, user) {
+				    var loc = {lat: location.lat(), lng: location.lng(), username: user};
 					$.post("SaveMarker.php", loc, function(data){
 						console.log("Saving data: " + loc);
 						console.log("Returned: " + data);
-						console.log("Saved marker location (lat="+location.lat()+",lng="+location.lng()+") to database");
+						console.log("Saved marker location (lat="+location.lat()+", lng="+location.lng()+", username="+user+") to database");
 					});
 				 
-			      		var marker = new google.maps.Marker({
+			      		var marker = new MarkerWithLabel({
 						position: location,
 			       			map: map,
-						icon: 'Images/RubbishBin.png'
+						icon: 'Images/RubbishBin.png',
+						title: "placed by: " + user,
+						labelContent: user,
+						labelClass: "labels" // the CSS class for the label
 			      		});
 					/*markers.push([location.lat(), location.lng()]);
 					for(i = 0; i < markers.length; i++) {
