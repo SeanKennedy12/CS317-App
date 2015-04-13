@@ -47,7 +47,6 @@ function GarbageView() {
     this.setAboutCallback = function (callback) {
         addMouseAndTouchUp("about", callback);
     };
-
     
 
     this.init = function () {

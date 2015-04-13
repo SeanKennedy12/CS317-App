@@ -1,25 +1,25 @@
 <html>
 	<head>
-		<title>Garbage</title>
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="SignIn.css">
 	</head>
 	
-	<body onload="signinBackFunction()">
-
-     <nav id="nav" class="">
-
-    <p id="SignInBack">
-        <img width="64" height="64" alt="Show" src="Images/back-512.png"></img>
-    </p>
-   </nav>
+	<body>
+		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
 		<header><h1>Sign In</h1></header>
- <script>
-                    function signinBackFunction(){
-                    document.getElementById("SignInBack").addEventListener("click", function(){
-                        window.location.href = "index.html"; });
-                    };
-                </script>
+		
+		<form action="SignIn.php">
+			<label>Username: </label>
+			<input type="text" id="username" placeholder="Username" required><br>
+			<label>Password: </label>
+			<input type="password" id="password" placeholder="Password" required><br>
+                        <a href = "Welcome.html"><input type="submit" value="Login" id="loginButton"></a>
+		</form>
+
+		<div id="registerDiv">
+			Not a member?
+			<a href="Register.html">Register</a>
+		</div>
 	</body>
 </html>

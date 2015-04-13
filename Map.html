@@ -1,39 +1,74 @@
 <html>
 	<head>
-		<title>Garbage</title>
 		<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    	<link rel="stylesheet" type="text/css" href="Map.css">
-    	
-    	<script src="http://maps.googleapis.com/maps/api/js"></script>
-		<script>
-			function initialize() {
-				var mapProp = {
-    				center:new google.maps.LatLng(55.861629,-4.242531),
-    				zoom:15,
-    				mapTypeId:google.maps.MapTypeId.ROADMAP
-  				};
-  				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-			}
-		google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
+	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    	<link rel="stylesheet" type="text/css" href="Map.css">
+	    	
+	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+			<script> 
+				var map;
+				var markers = [];
+				function initialize() {
+					var mapProp = {
+	    				center:new google.maps.LatLng(55.861629,-4.242531),
+	    				zoom:15,
+	    				mapTypeId:google.maps.MapTypeId.ROADMAP
+	  				};
+					var marker;
+					map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+					google.maps.event.addListener(map, 'click', function(event) {
+		          			placeMarker(event.latLng);
+		         	});
+						
+					$.get("LoadMarkers.php", function(data){
+						console.log("Preparing to load dataset... Data: " + data);
+						for(i = 0; i < data.length; i++){
+							console.log("Loading dataset: " + data);
+							console.log("Loaded (lat="+parseFloat(data[i][0])+", lng="+parseFloat(data[i][1])+")");
+							placeMarker(new google.maps.LatLng(parseFloat(data[i][0]), parseFloat(data[i][1])));
+						}
+					});
+				}
+
+				 function placeMarker(location) {
+				    var loc = {lat: location.lat(), lng: location.lng()};
+					$.post("SaveMarker.php", loc, function(data){
+						console.log("Saving data: " + loc);
+						console.log("Returned: " + data);
+						console.log("Saved marker location (lat="+location.lat()+",lng="+location.lng()+") to database");
+					});
+				 
+			      		var marker = new google.maps.Marker({
+						position: location,
+			       			map: map,
+						icon: 'Images/RubbishBin.png'
+			      		});
+					/*markers.push([location.lat(), location.lng()]);
+					for(i = 0; i < markers.length; i++) {
+						console.log("lat loc: " + location.lat() + " markers lat: " +  markers[i][0]);
+						console.log("lat lng: " + location.lng() + " markers lng: " +  markers[0][i]);
+						if(location.lat() > markers[i][0] && (location.lat() - markers[i][0]) < 0.01) {
+							if(location.lng() > markers[0][i] && (location.lng() - markers[0][i]) < 0.01) {
+								var marker = new google.maps.Marker({
+									position: location,
+						       			map: map,
+									icon: 'Images/RubbishBinRed.png'
+				      				});
+							}
+						}
+					}*/
+			    }
+					
+				google.maps.event.addDomListener(window, 'load', initialize);
+
+			</script>
 	</head>
 	
-	<body onload="mapBackFunction()">
-
-    <nav id="nav" class="">
-
-    <p id="MapBack">
-        <img width="64" height="64" alt="Show" src="Images/back-512.png"></img>
-    </p>
-   </nav>
+	<body>
+		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
 		<header id="header"><h1>Map</h1></header>
 		<div id="googleMap"></div>
-<script>
-                    function mapBackFunction(){
-                    document.getElementById("MapBack").addEventListener("click", function(){
-                        window.location.href = "index.html"; });
-                    };
-</script>
 	</body>
 </html>
