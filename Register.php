@@ -12,12 +12,13 @@ if(!$conn or !$db){
 }
 
 //Check if account with given username and password already exists
-$query = mysql_query("SELECT * FROM app_accounts WHERE username=".$_POST['username']." AND password=".$_POST['password'].";");
-if(!mysql_fetch_array($query)){
-	mysql_query("INSERT INTO app_accounts (username, password) VALUES (".$_POST['username'].", ".$_POST['password'].");"); 
-	echo("true");
+$query = mysql_query('SELECT * FROM app_accounts WHERE username="'.$_POST['username'].'" AND password="'.$_POST['password'].'";');
+$row = mysql_fetch_array($query);
+if(!$row){
+	mysql_query('INSERT INTO app_accounts (username, password) VALUES ("'.$_POST['username'].'", "'.$_POST['password'].'");'); 
+	echo 'true';
 }else{
-	echo("false");
+	echo 'false';
 }
 
 ?> 

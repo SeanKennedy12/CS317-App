@@ -12,8 +12,9 @@ if(!$conn or !$db){
 }
 
 //Check if account with given username and password exists
-$query = mysql_query("SELECT * FROM app_accounts WHERE username=".$_POST['username']." AND password=".$_POST['password'].";");
-if(mysql_fetch_array($query)){
+$query = mysql_query('SELECT * FROM app_accounts WHERE username="'.$_POST['username'].'" AND password="'.$_POST['login_password'].'";');
+$row = mysql_fetch_array($query);
+if($row){
 	echo("true");
 }else{
 	echo("false");
