@@ -41,21 +41,29 @@
 				}
 
 				 function placeMarker(location, user) {
-				    var loc = {lat: location.lat(), lng: location.lng(), username: user};
-					$.post("SaveMarker.php", loc, function(data){
-						console.log("Saving data: " + loc);
-						console.log("Returned: " + data);
-						console.log("Saved marker location (lat="+location.lat()+", lng="+location.lng()+", username="+user+") to database");
-					});
-				 
-			      		var marker = new MarkerWithLabel({
-						position: location,
-			       			map: map,
-						icon: 'Images/RubbishBin.png',
-						title: "placed by: " + user,
-						labelContent: user,
-						labelClass: "labels" // the CSS class for the label
-			      		});
+						var loc = {lat: location.lat(), lng: location.lng(), username: user};
+						$.post("SaveMarker.php", loc, function(data){
+							console.log("Saving data: " + loc);
+							console.log("Returned: " + data);
+							console.log("Saved marker location (lat="+location.lat()+", lng="+location.lng()+", username="+user+") to database");
+						});
+				 						
+						var marker = {assignedLocation: loc, labelMarker: new MarkerWithLabel({
+							position: location,
+								map: map,
+							icon: 'Images/RubbishBin.png',
+							title: "placed by: " + user,
+							labelContent: user,
+							labelClass: "labels" // the CSS class for the label
+			      		})};
+						
+						google.maps.event.addListener(marker.labelMarker, 'dblclick', function(event) {
+							marker.labelMarker.setMap(null);
+							$.post("ClearMarker.php", marker.assignedLocation, function(data){
+								console.log("Clearing marker: lat="+marker.assignedLocation.lat+", lng=" + marker.assignedLocation.lng);
+								console.log("Returned: " + data);
+							});
+						});
 					/*markers.push([location.lat(), location.lng()]);
 					for(i = 0; i < markers.length; i++) {
 						console.log("lat loc: " + location.lat() + " markers lat: " +  markers[i][0]);
