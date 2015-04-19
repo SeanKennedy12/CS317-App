@@ -36,32 +36,37 @@ div {
     
 }
 
-#one {
- border-bottom: 1.6rem solid orange;   
+#achievementBox {
+  text-align: center;
+  width: 90%;
+  height: 10%;
+  color: white;
+  font-size: 1.0rem;
+  font-weight: bold;
+  border: 5px solid gray;
+  margin: 10px;
 }
 
-#two {
- border-bottom: 1.6rem solid orange;   
+#text1 {
+ border-bottom: 0.8rem solid orange;   
 }
 
-#three {
- border-bottom: 1.6rem solid orange;   
+#text2 {
+ border-bottom: 0.8rem solid orange;   
 }
 
-#four {
- border-bottom: 1.6rem solid orange;   
+#text3 {
+ border-bottom: 0.8rem solid orange;   
 }
 
-#five {
- border-bottom: 1.6rem solid orange;   
+#text4 {
+ border-bottom: 0.8rem solid orange;   
 }
 
-#six {
- border-bottom: 1.6rem solid orange;     
+#text5 {
+ border-bottom: 0.8rem solid orange;   
 }
 
-#authors {
- border-bottom: 3rem solid orange;   
- font-size: 1.0rem;
- color: darkslategrey;
+.yellowText {
+   color: yellow; 
 }
