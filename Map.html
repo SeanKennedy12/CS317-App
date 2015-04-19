@@ -21,9 +21,16 @@
 					map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 					google.maps.event.addListener(map, 'click', function(event) {
-							var user = docCookies.getItem("username");
-							var userLevel = parseInt(docCookies.getItem("level"));
-							if(!user || user.length === 0) user = "anonymous";
+							var user = "";
+							var isSignedIn = false;
+							if(docCookies.hasItem("username")){
+							    user = docCookies.getItem("username");
+								isSignedIn = true;
+							}else{
+							    user = "anonymous";
+							}
+							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
+							if(isSignedIn) updateStats(user, "markers_created");
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
 						
@@ -74,6 +81,7 @@
 								console.log("Clearing marker: lat="+marker.assignedLocation.lat+", lng=" + marker.assignedLocation.lng);
 								console.log("Returned: " + data);
 							});
+							if(docCookies.hasItem("username")) updateStats(docCookies.getItem("username"), "markers_cleared");
 						});
 					/*markers.push([location.lat(), location.lng()]);
 					for(i = 0; i < markers.length; i++) {
@@ -90,6 +98,13 @@
 						}
 					}*/
 			    }
+					
+				function updateStats(user, stat){
+					$.post("UpdateUsageStats.php", {username: user, stat_to_update: stat}, function(data){
+							console.log("Updating data of user "+user+": " + stat);
+							console.log("Returned: " + data);
+					});
+				}
 					
 				google.maps.event.addDomListener(window, 'load', initialize);
 
