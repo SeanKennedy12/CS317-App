@@ -19,7 +19,7 @@ while($row = mysql_fetch_array($query)){
 	if($row_count > 0){
 		$markers_JSON = $markers_JSON.',';
 	}
-	$markers_JSON = $markers_JSON.'{"lat":'.$row[0].', "lng":'.$row[1].', "username":"'.$row[2].'"}';
+	$markers_JSON = $markers_JSON.'{"lat":'.$row[0].', "lng":'.$row[1].', "username":"'.$row[2].'", "type":'.$row[3].'}';
 	$row_count++;
 }
 $markers_JSON = $markers_JSON.']}';
