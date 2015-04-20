@@ -12,17 +12,17 @@ if(!$conn or !$db){
 }
 
 //Load in the saved markers
-$query = mysql_query("select * from markers"); 
-$markers_JSON = '{"markers":[';
+$query = mysql_query("select * from messages"); 
+$messages_JSON = '{"messages":[';
 $row_count = 0;
 while($row = mysql_fetch_array($query)){
 	if($row_count > 0){
-		$markers_JSON = $markers_JSON.',';
+	    $messages_JSON = $messages_JSON.',';
 	}
-	$markers_JSON = $markers_JSON.'{"lat":'.$row[0].', "lng":'.$row[1].', "username":"'.$row[2].'", "type":"'.$row[3].'"}';
+	$messages_JSON = $messages_JSON.'"'.$row[0].'"';
 	$row_count++;
 }
-$markers_JSON = $markers_JSON.']}';
+$messages_JSON = $messages_JSON.']}';
 
-echo $markers_JSON;
-?> 
+echo $messages_JSON;
+?>
