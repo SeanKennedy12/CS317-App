@@ -13,12 +13,16 @@ if(!$conn or !$db){
 
 //Load in the saved markers
 $query = mysql_query("select * from markers"); 
-$markers = array();
+$markers_JSON = '{"markers":[';
 $row_count = 0;
 while($row = mysql_fetch_array($query)){
-	$markers[$row_count] = $row;
+	if($row_count > 0){
+		$markers_JSON = $markers_JSON.',';
+	}
+	$markers_JSON = $markers_JSON.'{"lat":'.$row[0].', "lng":'.$row[1].', "username":"'.$row[2].'", "type":'.$row[3].'}';
 	$row_count++;
 }
+$markers_JSON = $markers_JSON.']}';
 
-echo $markers;
+echo $markers_JSON;
 ?> 

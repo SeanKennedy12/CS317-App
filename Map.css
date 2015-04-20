@@ -32,3 +32,15 @@ header {
     font-size: 2rem;
     font-weight: bold;
 }
+
+.labels {
+	 color: red;
+	 background-color: white;
+	 font-family: "Lucida Grande", "Arial", sans-serif;
+	 font-size: 14px;
+	 font-weight: bold;
+	 text-align: center;
+	 width: 100px;     
+	 border: 2px solid black;
+	 white-space: normal;
+}

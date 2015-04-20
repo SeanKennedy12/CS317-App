@@ -3,10 +3,11 @@
 		<meta charset="utf-8">
 	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	    	<link rel="stylesheet" type="text/css" href="Map.css">
-	    	
 	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-			<script> 
+			<script src="cookies.js"></script>
+			<script>
 				var map;
 				var markers = [];
 				function initialize() {
@@ -19,32 +20,67 @@
 					map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 					google.maps.event.addListener(map, 'click', function(event) {
-		          			placeMarker(event.latLng);
+							var user = "";
+							var isSignedIn = false;
+							if(docCookies.hasItem("username")){
+							    user = docCookies.getItem("username");
+								isSignedIn = true;
+							}else{
+							    user = "anonymous";
+							}
+							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
+							if(isSignedIn) updateStats(user, "markers_created");
+		          			placeMarker(event.latLng, user, userLevel);
 		         	});
 						
 					$.get("LoadMarkers.php", function(data){
 						console.log("Preparing to load dataset... Data: " + data);
-						for(i = 0; i < data.length; i++){
-							console.log("Loading dataset: " + data);
-							console.log("Loaded (lat="+parseFloat(data[i][0])+", lng="+parseFloat(data[i][1])+")");
-							placeMarker(new google.maps.LatLng(parseFloat(data[i][0]), parseFloat(data[i][1])));
+						var pos = JSON.parse(data);
+						console.log("Parsed JSON: " + pos);
+						for(i = 0; i < pos.markers.length; i++){
+							var current_lat = parseFloat(pos.markers[i].lat);
+							var current_lng = parseFloat(pos.markers[i].lng);
+							var current_username = pos.markers[i].username;
+							var current_markertype = parseInt(pos.markers[i].type);
+							console.log("Loaded (lat="+current_lat+", lng="+current_lng+", markerType="+current_markertype+")");
+							placeMarker(new google.maps.LatLng(current_lat, current_lng), current_username, current_markertype);
 						}
 					});
 				}
-
-				 function placeMarker(location) {
-				    var loc = {lat: location.lat(), lng: location.lng()};
-					$.post("SaveMarker.php", loc, function(data){
-						console.log("Saving data: " + loc);
-						console.log("Returned: " + data);
-						console.log("Saved marker location (lat="+location.lat()+",lng="+location.lng()+") to database");
-					});
-				 
-			      		var marker = new google.maps.Marker({
-						position: location,
-			       			map: map,
-						icon: 'Images/RubbishBin.png'
-			      		});
+				 function placeMarker(location, user, markerType) {
+						var loc = {lat: location.lat(), lng: location.lng(), username: user, type: markerType};
+						$.post("SaveMarker.php", loc, function(data){
+							console.log("Saving data: " + loc);
+							console.log("Returned: " + data);
+							console.log("Saved marker location (lat="+location.lat()+", lng="+location.lng()+", username="+user+", type="+markerType+") to database");
+						});
+				 				
+						var iconPath = "";
+						switch(markerType){
+							case 1:
+								iconPath = 'Images/RubbishBinRed.png'
+								break;
+							default:
+								iconPath = 'Images/RubbishBin.png';
+								break;
+							}
+						var marker = {assignedLocation: loc, labelMarker: new MarkerWithLabel({
+							position: location,
+							map: map,
+							icon: iconPath,
+							title: "placed by: " + user,
+							labelContent: user,
+							labelClass: "labels" // the CSS class for the label
+			      		})};
+						
+						google.maps.event.addListener(marker.labelMarker, 'dblclick', function(event) {
+							marker.labelMarker.setMap(null);
+							$.post("ClearMarker.php", marker.assignedLocation, function(data){
+								console.log("Clearing marker: lat="+marker.assignedLocation.lat+", lng=" + marker.assignedLocation.lng);
+								console.log("Returned: " + data);
+							});
+							if(docCookies.hasItem("username")) updateStats(docCookies.getItem("username"), "markers_cleared");
+						});
 					/*markers.push([location.lat(), location.lng()]);
 					for(i = 0; i < markers.length; i++) {
 						console.log("lat loc: " + location.lat() + " markers lat: " +  markers[i][0]);
@@ -61,13 +97,19 @@
 					}*/
 			    }
 					
+				function updateStats(user, stat){
+					$.post("UpdateUsageStats.php", {username: user, stat_to_update: stat}, function(data){
+							console.log("Updating data of user "+user+": " + stat);
+							console.log("Returned: " + data);
+					});
+				}
 				google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
 	</head>
 	
 	<body>
-		<a href="index.html"><img src="Images/back-512.png" style="float: left; width:50px;height:50px;border:0"></a>
+		<a href="index.html"><img src="Images/Home.png" style="width:70px;height:70px;border:0"></a>
 		<header id="header"><h1>Map</h1></header>
 		<div id="googleMap"></div>
 	</body>
