@@ -11,6 +11,11 @@ if(!$conn or !$db){
 	die(mysql_error());
 }
 
-//Save the given marker
-mysql_query("TRUNCATE markers;");
+//Delete the given marker
+$row = mysql_query("DELETE FROM markers WHERE lat=".$_POST['lat']." AND lng=".$_POST['lng'].";");
+if($row){
+	echo "true";
+}else{
+	echo "false";
+}
 ?> 
