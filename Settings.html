@@ -3,10 +3,27 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="Settings.css">
+	<script>
+ 		function changeBGC(color){
+ 	 	document.body.style.backgroundColor = color;
+		}
+	</script>
 	</head>
 	
 	<body>
 		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
 		<header><h1>Settings</h1></header>
+
+<div>
+		Change background colour:
+		<button type = "button" width="3000" height="50" type='button' onclick="changeBGC('#000000');return false" />Black</button>
+		<button type = "button" width="3000" height="50" type='button' onclick="changeBGC('#FFFFFF');return false" />White</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#DF0101');return false" />Red</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#0174DF');return false" />Blue</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#01DF01');return false" />Green</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFFF00');return false" />Yellow</button>
+</div>
+	
+
 	</body>
 </html>
