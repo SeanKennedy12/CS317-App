@@ -3,7 +3,6 @@
 		<meta charset="utf-8">
 	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	    	<link rel="stylesheet" type="text/css" href="Map.css">
-			
 	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
 			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -48,7 +47,6 @@
 						}
 					});
 				}
-
 				 function placeMarker(location, user, markerType) {
 						var loc = {lat: location.lat(), lng: location.lng(), username: user, type: markerType};
 						$.post("SaveMarker.php", loc, function(data){
@@ -105,7 +103,6 @@
 							console.log("Returned: " + data);
 					});
 				}
-					
 				google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
