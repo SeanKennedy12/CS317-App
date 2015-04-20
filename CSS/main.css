@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    
+}
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    font-size: 3vh;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header {
+    color: white;
+    height: 3.25rem;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: #F7D708;
+}
+
+.header img {
+  float: left;
+  height: 100%;
+}
+
+.header h1 {
+  margin-left: 5%;
+}
+
+#view {
+  position: absolute;
+  top: 3.25rem;
+  width: 100%;
+  height: calc(100% - 3.25rem);
+  overflow-y: auto;
+  background-color: #FF9E00;
+  opacity: inherit; }
+
+#mainDiv {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+p.mainDivItem {
+    padding: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#googleMap {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#registerDiv {
+	text-align: center;
+	padding: 2rem;
+}
+
+#navigation {
+  position: relative;
+  z-index: 10;
+  left: -20%;
+  width: 20%;
+  background-color: #F7D708;
+}
+
+#navigation.open{
+    left: 0%;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-item {
+  /* non-critical appearance styles */
+  width: calc(100%-1px);
+  border: 1px solid #000;
+  overflow: auto;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 1em;
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+#one {
+ border-bottom: 1.6rem solid orange;   
+}
+
+#two {
+ border-bottom: 1.6rem solid orange;   
+}
+
+#three {
+ border-bottom: 1.6rem solid orange;   
+}
+
+#four {
+ border-bottom: 1.6rem solid orange;   
+}
+
+#five {
+ border-bottom: 1.6rem solid orange;   
+}
+
+#six {
+ border-bottom: 1.6rem solid orange;     
+}
+
+#authors {
+ border-bottom: 3rem solid orange;   
+ font-size: 1.0rem;
+ color: darkslategrey;
+}
+
+#achievementBox {
+  text-align: center;
+  //width: 100%;
+  height: 12%;
+  color: white;
+  font-size: 1.0rem;
+  font-weight: bold;
+  border: 5px solid gray;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+#text1 {
+ border-bottom: 0.8rem solid orange;   
+}
+
+#text2 {
+ border-bottom: 0.8rem solid orange;   
+}
+
+#text3 {
+ border-bottom: 0.8rem solid orange;   
+}
+
+#text4 {
+ border-bottom: 0.8rem solid orange;   
+}
+
+#text5 {
+ border-bottom: 0.8rem solid orange;   
+}
+
+.yellowText {
+   color: yellow; 
+}

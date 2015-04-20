@@ -5,7 +5,8 @@
  */
 
 function GarbageView() {
-       var addMouseAndTouchUp = function (elementID, handler) {
+       var menuActive = false,
+           addMouseAndTouchUp = function (elementID, handler) {
             //utility function to add both mouseup and touchend events and prevent double events
             var element = document.getElementById(elementID),
                 f = function (e) {
@@ -48,6 +49,21 @@ function GarbageView() {
         addMouseAndTouchUp("about", callback);
     };
     
+    /*
+     * Toggles the menu
+     */
+    this.toggleMenu = function(){
+
+	if(!menuActive){
+            $("#navigation").addClass('open');
+            $("main").addClass('fade-out');
+            menuActive = true;
+	}else{
+            $("#navigation").removeClass('open');
+            $("main").removeClass('fade-out');
+            menuActive = false;
+	}
+    };
 
     this.init = function () {
         //addMouseAndTouchUp("about", showAbout);

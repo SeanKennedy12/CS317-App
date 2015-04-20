@@ -2,34 +2,253 @@
 <html>
 
 	<head>
-		<!--Think of name for app???-->
-    	<title>Garbage</title>
-    	<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="icon" sizes="192x192" href="Images/icon.jpg" />
-        <link rel="apple-touch-icon" href="Images/icon.jpg" />
-        <link rel="shortcut icon" href="Images/icon.jpg" type="image/x-icon" />
-    	<link rel="stylesheet" type="text/css" href="GarbageIndex.css">
-		
-		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script src="cookies.js"></script>
-		<script src="start.js"></script>
-		<script src="GarbageModel.js"></script>
-    	<script src="GarbageView.js"></script>
-    	<script src="GarbageController.js"></script>
+            <!--Think of name for app???-->
+            <title>Garbage</title>
+            
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <meta name="mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            
+            <link rel="icon" sizes="192x192" href="Images/icon.jpg" />
+            <link rel="apple-touch-icon" href="Images/icon.jpg" />
+            <link rel="shortcut icon" href="Images/icon.jpg" type="image/x-icon" />
+            <link rel="stylesheet" type="text/css" href="CSS/main.css">
+            
+            <script src="https://maps.googleapis.com/maps/api/js"></script>
+            <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	</head>
 
 	<body>
-           <span><a href="Profile.html"><img src="Images/user.png" style="float: left;width:50px;height:50px;border:0;"></a></span>
-		<header><h1>Garbage</h1></header>
-		<div id="mainDiv">
-			<p class="mainDivItem" id="signIn">Sign In</p>
-			<p class="mainDivItem" id="map">Map<p>
-			<p class="mainDivItem" id="chat">Chat<p>
-			<p class="mainDivItem" id="settings">Settings</p>
-			<p class="mainDivItem" id="about">About</p>
-		</div>
+            <div class="header">
+                <a href="#" class="nav-label" id="nav-open"><img src="Images/Home.png" alt="Show" height="32" width="32" id="nav-open"></a>
+                <h1 id="title">Map</h1>
+            </div>
+            
+            <nav id="navigation">
+                <div class="nav-item hidden">
+                    <a href="#home" class="nav-label">
+			<span id="nav-home">Home</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#map" class="nav-label">
+			<span id="nav-map">Map</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#chat" class="nav-label">
+			<span id="nav-chat">Chat</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#settings" class="nav-label">
+			<span id="nav-settings">Settings</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#about" class="nav-label">
+			<span id="nav-about">About</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#profile" class="nav-label">
+			<span id="nav-profile">Profile</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#signin" class="nav-label">
+			<span id="nav-signin">Sign In</span>
+                    </a>
+                </div>
+            </nav>
+            <main id="view">
+                <section id="home" class="hidden">
+                    <div id="mainDiv">
+                        <p class="mainDivItem" id="signInbutton">Sign In</p>
+                        <p class="mainDivItem" id="mapbutton">Map<p>
+                        <p class="mainDivItem" id="chatbutton">Chat<p>
+                        <p class="mainDivItem" id="settingsbutton">Settings</p>
+                        <p class="mainDivItem" id="aboutbutton">About</p>
+                    </div>
+                </section>
+
+                <section id="signIn" class="hidden">
+                    <form action="SignIn.php">
+                            <label>Username: </label>
+                            <input type="text" id="username" placeholder="Username" required><br>
+                            <label>Password: </label>
+                            <input type="password" id="password" placeholder="Password" required><br>
+                            <input type="submit" value="Login" id="loginButton">
+                    </form>
+
+                    <div id="registerDiv">Not a member? Register</div>
+                </section>
+
+                <section id="register" class="hidden">
+                    <form action="Register.php">
+                            <label>Email: </label>
+                            <input type="email" id="email" placeholder="Email" required/><br>
+                            <label>Username: </label>
+                            <input type="text" id="username" placeholder="Username" required/><br>
+                            <label>Password: </label>
+                            <input type="password" id="password" placeholder="Password" required/><br>
+                            <input type="submit" value="Register">
+                    </form>
+                </section>
+
+                <section id="map">
+                    <div id="googleMap"></div>
+                </section>
+
+                <section id="chat" class="hidden">
+                </section>
+
+                <section id="settings" class="hidden">
+                </section>
+
+                <section id="about" class="hidden">
+                    <div id="mainDiv">
+                            <p class="ParagraphText" id="one">The [INSERT APP NAME HERE] is a community based app designed to encourage cooperation and healthy living while helping out the environment of our cities. </p>
+                            <p class="ParagraphText" id="two">With this app, we can all work together to improve the land around us while getting fit, finding new places and meeting new friends.<p>
+                            <p class="ParagraphText" id="three">To start, simply sign up for a free account on our <a href="Register.html">register page.</a> or, if you already have an account, <a href="SignIn.html">sign in</a> to use the app.<p>
+                            <p class="ParagraphText" id="four">Once you have your free account, its time to get social! Join the <a href="Chat.html">chat</a> and meet fellow [INSERT APP NAME HERE]ers and hop onto the <a href="Map.html">map</a> to find nearby locations that YOU can help to clean up.</p>
+                            <p class="ParagraphText" id="five">Once you've had a chance to search around the app, its time to start cleaning up! Select a location on the map that has a garbage problem, designated by a red or orange marker colour, and head out.</p>
+                            <p class="ParagraphText" id="six">Keep in mind, this is a chance to keep healthy and meet new folks. So go somewhere you've never been before, maybe somewhere out of your way, and use the chat to set up a cleanup meetup!</p>
+                            <p class ="ParagraphText" id="authors">This app was created for Strathclyde Universities CS317 Mobile application development. This app was developed by David Adamson, Philip Ivers, Sean Kennedy, Jhordan Tease and Grant Toghill</p>
+                    </div>
+                </section>
+                
+                <section id="profile" class="hidden">
+                    <div id="mainDiv">
+                        <p class="ParagraphText" id="text1"><span class ="yellowText">Number of posts in chat</span>: 3</p>
+			<p class="ParagraphText" id="text2"><span class ="yellowText">Number of items picked up</span>: 6</p>
+                        <p class="ParagraphText" id="text3"><span class ="yellowText">Number of markers added to map</span>: 1</p>
+                        <p class="ParagraphText" id="text4"><span class ="yellowText">Date of account creation</span>: 10/02/95</p>
+                        <p class="ParagraphText" id="text5"><span class ="yellowText">Time spent on app</span>: 3Hrs 17Minutes</p>
+                        
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/IconAboutColoured.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Getting Started: Created an account!
+                        <img src="Images/YesUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/IconAboutRainbow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        All about us!: Checked out the about page!
+                        <img src="Images/YesUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon1Blue.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Hobo: Picked up one piece of trash.
+                        <img src="Images/YesUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon5Blue.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Pedestrian: Picked up five pieces of trash.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon10Blue.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Good Samaritan: Picked up ten pieces of trash.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon25Blue.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Council worker: Picked up twenty five pieces of trash.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon50Blue.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Garbage Mogul: Picked up fifty pieces of trash.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon100Blue.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Lord of Trash: Picked up one hundred pieces of trash.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon1Yellow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        The Loneliest Number: Added one message to the chat.
+                        <img src="Images/YesUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon5Yellow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        No longer hiding...: Added five messages to the chat.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon10Yellow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Frequent poster: Added ten messages to the chat.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon25Yellow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Almost a moderator: Added twenty five messages to the chat.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon50Yellow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Its like Myplace in 2006: Added fifty messages to the chat.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon100Yellow.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        The new Facebook: Added one hundred messages to the chat.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon1Purple.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Scribbler: Added one marker to the map.
+                        <img src="Images/YesUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon5Purple.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Artist: Added five markers to the map.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon10Purple.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Cartographer: Added ten markers to the map.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/Icon25PurpleSpec.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        Global Explorer: Added twenty five markers to the map.
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                        
+                        <div id ="achievementBox">
+                        <img src="Images/IconSecretGold.png" style="float: left;max-width:100%;max-height:100%;border:0">
+                        ???: ???
+                        <img src="Images/NoUnlock.png" style="float: right;max-width:70%;max-height:70%;border:0">
+                        </div>
+                </div>
+                </section>
+            </main> 
+   
+            <script src="javascript/GarbageMap.js"></script>
+            <script src="javascript/GarbageModel.js"></script>
+            <script src="javascript/GarbageView.js"></script>
+            <script src="javascript/GarbageController.js"></script>
 	</body>
 </html>
