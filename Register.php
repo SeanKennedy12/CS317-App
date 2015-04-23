@@ -15,7 +15,8 @@ if(!$conn or !$db){
 $query = mysql_query('SELECT * FROM app_accounts WHERE username="'.$_POST['username'].'";');
 $row = mysql_fetch_array($query);
 if(!$row){
-	mysql_query('INSERT INTO app_accounts (username, password, level) VALUES ("'.$_POST['username'].'", "'.$_POST['password'].'", "0");'); 
+	mysql_query('INSERT INTO app_accounts (username, password, level) VALUES ("'.$_POST['username'].'", "'.password_hash($_POST['password'],PASSWORD_DEFAULT).'", "0
+	");'); 
 	echo 'true';
 }else{
 	echo 'false';

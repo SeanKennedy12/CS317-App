@@ -12,12 +12,18 @@ if(!$conn or !$db){
 }
 
 //Check if account with given username and password exists
-$query = mysql_query('SELECT * FROM app_accounts WHERE username="'.$_POST['username'].'" AND password="'.$_POST['password'].'";');
+$query = mysql_query('SELECT * FROM app_accounts WHERE username="'.$_POST['username'].'";');
 $row = mysql_fetch_array($query);
 if($row){
-	echo($row[2]); // Echo the account level
+	if(password_verify($_POST['password'], $row[1])){
+		echo($row[2]); // Success! Echo the account level.
+	}else{
+		//echo('--'.$pwv).'--';
+		//echo('Verification failed: pw=|'.$_POST['password'].'|, hash=|'.$row[1].'|');
+		echo("-2"); // Password was incorrect
+	}
 }else{
-	echo("-1"); // Negative value signals failure
+	echo("-1"); // Account could not be found
 }
 
 ?> 
