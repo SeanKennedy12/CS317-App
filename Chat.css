@@ -36,9 +36,10 @@ main{
 }
 
 .chat_message{
+	font-size: 0.8rem;
     margin: 0.2rem;
     padding: 0.2rem;
-    background: #c5e0b4;
+    background: #ffffff;
 }
 input {
     font-size: 0.8rem;
