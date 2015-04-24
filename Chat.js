@@ -15,18 +15,6 @@ $(document).ready(function() {
 	message_window.scrollIntoView();
 });
 
-/*
-$("message_window").keypress(function(e){
-console.log("Key pressed!");
- var key = e.which;
- if(key == 13){  // the enter key code
-	console.log("Enterkey pressed!");
-    $('post_message').click();
-    return false;  
-  }
-}); 
-*/ 
-
 function sendMessage(){
 	var MESSAGE_CHARACTER_MINIMUM = 1;
 	var MESSAGE_CHARACTER_LIMIT = 512;
@@ -52,6 +40,14 @@ function sendMessage(){
 	}else if(user_message.length < MESSAGE_CHARACTER_MINIMUM){
 		alert("Failed to send message - must be more than "+(MESSAGE_CHARACTER_MINIMUM - 1)+" characters (your message is "+user_message.length+" characters)");
 	}else{
+		if(isSignedIn){
+			// Update the number of messages sent by this user
+			$.post("UpdateUsageStats.php", {username: current_username, stat_to_update: "messages_sent"}, function(data){
+				console.log("Increasing messages sent by user <"+current_username+"> by 1");
+				console.log("Returned: " + data);
+			});
+		}
+		
 		message_window.value = "";
 	    // Now format the message
 		var complete_message = "<" + current_username + ">: " + user_message;
