@@ -22,7 +22,7 @@
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFFF00');return false" />Yellow</button>
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFA500');return false" />Orange</button>
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#7401DF');return false" />Purple</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFA500');return false" />Pink</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#DF01D7');return false" />Pink</button>
 </div>
 	
 

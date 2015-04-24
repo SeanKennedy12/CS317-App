@@ -16,11 +16,17 @@ body {
 	background: #FFA500;
 }
 
+form {
+	text-align: center
+}
+
 header {
+	
     color: white;
     text-align: center;
-    padding: 0.2rem; 
+    padding-bottom: 0.2rem; 
     border: 1rem;
-    font-family: Arial Black, Charcoal, sans-serif;
+    font-family: Impact, Charcoal, sans-serif;
     font-size: 2rem;
+    font-weight: bold;
 }
