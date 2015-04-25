@@ -40,12 +40,11 @@ function sendMessage(){
 	}else if(user_message.length < MESSAGE_CHARACTER_MINIMUM){
 		alert("Failed to send message - must be more than "+(MESSAGE_CHARACTER_MINIMUM - 1)+" characters (your message is "+user_message.length+" characters)");
 	}else{
+	    // Update the number of messages sent by this user
 		if(isSignedIn){
-			// Update the number of messages sent by this user
-			$.post("UpdateUsageStats.php", {username: current_username, stat_to_update: "messages_sent"}, function(data){
-				console.log("Increasing messages sent by user <"+current_username+"> by 1");
-				console.log("Returned: " + data);
-			});
+			updateStats(current_username, "messages_sent");
+		}else{
+		    updateCookieStats("messages_sent");
 		}
 		
 		message_window.value = "";
