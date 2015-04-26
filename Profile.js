@@ -4,21 +4,24 @@
     var isSignedIn = false;
 	var stats;
 	if(docCookies.hasItem("username")){
+		console.log("Getting stats from account");
 		stats = getUsageStats(docCookies.getItem("username"));
 		isSignedIn = true;
 	}else{
+		console.log("Getting stats from local cookies");
 		stats = getUsageStats();
 		alert("Because you are not signed in, any achievements you earn will only be stored locally, and so they will disappear if cookies are cleared.");
 	}
+	console.log("markers_created:"+stats.markers_created+", markers_cleared:"+stats.markers_cleared+", messages_sent:" + stats.messages_sent);
 	var achievement_checks = [];
 	for(i = 0; i <= 18; i++){
 		achievement_checks[i] = document.getElementById("achievementCheck" + i);
 		
 	}
 	
-	document.getElementById("text1").innerHTML = ": " + stats.messages_sent;
-	document.getElementById("text2").innerHTML = ": " + stats.markers_cleared;
-	document.getElementById("text3").innerHTML = ": " + stats.markers_created;
+	document.getElementById("text1").innerHTML = '<span class ="yellowText">Number of posts in chat</span>: ' + stats.messages_sent;
+	document.getElementById("text2").innerHTML = '<span class ="yellowText">Number of items picked up</span>: ' + stats.markers_cleared;
+	document.getElementById("text3").innerHTML = '<span class ="yellowText">Number of markers added to map</span>: ' + stats.markers_created;
 	
 	if(isSignedIn){
 		achievement_checks[0].setAttribute("src", UNLOCKED_IMAGE);
@@ -70,13 +73,13 @@
 		}
 	}
 	
-	if(stats.messages_sent >= 1){
+	if(stats.markers_created >= 1){
 		achievement_checks[14].setAttribute("src", UNLOCKED_IMAGE);
-		if(stats.messages_sent >= 5){
+		if(stats.markers_created >= 5){
 			achievement_checks[15].setAttribute("src", UNLOCKED_IMAGE);
-			if(stats.messages_sent >= 10){
+			if(stats.markers_created >= 10){
 				achievement_checks[16].setAttribute("src", UNLOCKED_IMAGE);
-				if(stats.messages_sent >= 25){
+				if(stats.markers_created >= 25){
 					achievement_checks[17].setAttribute("src", UNLOCKED_IMAGE);
 				}
 			}

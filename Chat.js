@@ -1,18 +1,5 @@
 $(document).ready(function() {
-    var chat_window = document.getElementById("chat_window");
-	var message_window = document.getElementById("message_window");
-	
-    $.post("GetMessages.php", function(data){
-        console.log("Returned: " + data);
-		var messages = JSON.parse(data).messages;
-		console.log("There are "+messages.length+" messages in the parsed data");
-		for(i = 0; i < messages.length; i++){
-			console.log("Message #"+i+": " + messages[i])
-			addPost(messages[i]);
-		}
-    });
-	
-	message_window.scrollIntoView();
+    getMessages();
 });
 
 function sendMessage(){
@@ -50,14 +37,14 @@ function sendMessage(){
 		message_window.value = "";
 	    // Now format the message
 		var complete_message = "<" + current_username + ">: " + user_message;
-		addPost(complete_message);
+		addPost(complete_message, true);
 		$.post("PostMessage.php", {message: complete_message, username: current_username}, function(data){
             console.log("Returned: " + data);
         });
 	}
 }
 
-function addPost(message){
+function addPost(message, willScroll){
 	var chat_window = document.getElementById("chat_window");
 	var message_window = document.getElementById("message_window");
 	
@@ -66,5 +53,42 @@ function addPost(message){
 	node.className = "chat_message";
 	node.appendChild(textnode);
 	chat_window.appendChild(node);
-	message_window.scrollIntoView();
+	if(willScroll) message_window.scrollIntoView();
 }
+
+function clearChatWindow(){
+	var chat_window = document.getElementById("chat_window");
+	dojo.empty(chat_window);
+	/*
+	var messages = chat_window.childNodes;
+	var message_count = messages.length;
+	console.log("No of messages: " + message_count);
+	
+	for(i = 0; i < message_count; i++){
+		console.log("Clearing message #" + i);
+		chat_window.removeChild(messages[i]);
+	}
+	*/
+}
+
+function getMessages(){
+	var chat_window = document.getElementById("chat_window");
+	var message_window = document.getElementById("message_window");
+	
+    $.post("GetMessages.php", function(data){
+        console.log("Returned: " + data);
+		var messages = JSON.parse(data).messages;
+		console.log("There are "+messages.length+" messages in the parsed data");
+		for(i = 0; i < messages.length; i++){
+			console.log("Message #"+i+": " + messages[i])
+			addPost(messages[i], false);
+		}
+    });
+	
+	//message_window.scrollIntoView();
+}
+
+setInterval(function(){ 
+	clearChatWindow(); 
+	getMessages();
+}, 5000);
