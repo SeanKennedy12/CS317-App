@@ -16,13 +16,11 @@ body {
 	background: #FFA500;
 }
 
-header {
-    color: white;
-    text-align: center;
-    padding: 0.2rem; 
-    border: 1rem;
-    font-family: Arial Black, Charcoal, sans-serif;
-    font-size: 2rem;
+img.logo {
+    	display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+	width: 90%;
 }
 
 #mainDiv {

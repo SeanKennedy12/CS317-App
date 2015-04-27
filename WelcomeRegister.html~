@@ -3,9 +3,6 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="WelcomeRegister.css">
-        <link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
-        <link rel="apple-touch-icon" href="Images/MainIcon.png" />
-        <link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
 	</head>
 	
 	<body>

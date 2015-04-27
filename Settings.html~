@@ -11,7 +11,7 @@
 	</head>
 	
 	<body>
-		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
+		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0;float:left"></a>
 		<header><h1>Settings</h1></header>
 
 <div>
@@ -20,9 +20,9 @@
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#0174DF');return false" />Blue</button>
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#01DF01');return false" />Green</button>
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFFF00');return false" />Yellow</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFA500');return false" />Orange</button>
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#7401DF');return false" />Purple</button>
 		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#DF01D7');return false" />Pink</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFA500');return false" />Orange</button>
 </div>
 	
 
