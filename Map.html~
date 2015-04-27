@@ -30,7 +30,7 @@
 							}
 							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
 							if(isSignedIn) updateStats(user, "markers_created");
-						var snd = new Audio("Sounds/cymbal3.wav");
+						var snd = new Audio("Sounds/FoundTrash.wav");
 						snd.play();
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
