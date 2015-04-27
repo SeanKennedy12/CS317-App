@@ -11,6 +11,7 @@ function attemptRegister(){
 			docCookies.setItem("username", current_username);
 			docCookies.setItem("level", "0");
 			alert('Successfully registered username "'+current_username+'"');
+			window.location.href = "WelcomeRegister.html"
 		}else if(return_val == 0){
 			alert("Username has already been taken!");
 		}else if(return_val == -1){

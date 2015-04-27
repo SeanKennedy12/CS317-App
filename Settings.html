@@ -3,9 +3,12 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="Settings.css">
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="cookies.js"></script>
+		<script src="setBGC.js"></script>
 	<script>
  		function changeBGC(color){
- 	 	document.body.style.backgroundColor = color;
+			document.body.style.backgroundColor = color;
 		}
 	</script>
 	</head>
@@ -16,12 +19,12 @@
 
 <div>
 		Change background colour:
-		<button type = "button" width="3000" height="50" type='button' onclick="changeBGC('#000000');return false" />Black</button>
-		<button type = "button" width="3000" height="50" type='button' onclick="changeBGC('#FFFFFF');return false" />White</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#DF0101');return false" />Red</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#0174DF');return false" />Blue</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#01DF01');return false" />Green</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFFF00');return false" />Yellow</button>
+		<button type = "button" width="3000" height="50" type='button' onclick='changeBGC("#000000");console.log(docCookies.setItem("bgc", "#000000", Infinity));console.log(docCookies.hasItem("bgc"));return false' />Black</button>
+		<!--<button type = "button" width="3000" height="50" type='button' onclick="changeBGC('#FFFFFF');return false" />White</button>-->
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#DF0101');docCookies.setItem('bgc', '#DF0101', Infinity);return false" />Red</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#0174DF');docCookies.setItem('bgc', '#0174DF', Infinity);return false" />Blue</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#01DF01');docCookies.setItem('bgc', '#01DF01', Infinity);return false" />Green</button>
+		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFFF00');docCookies.setItem('bgc', '#FFFF00', Infinity);return false" />Yellow</button>
 </div>
 	
 

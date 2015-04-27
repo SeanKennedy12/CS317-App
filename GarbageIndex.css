@@ -37,3 +37,8 @@ p.mainDivItem {
 	font-size: 1.5rem;
     font-weight: bold;
 }
+
+#profileIcon{
+	font-size: 1.5rem;
+	color: white;
+}

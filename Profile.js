@@ -4,7 +4,7 @@
     var isSignedIn = false;
 	var stats;
 	if(docCookies.hasItem("username")){
-		console.log("Getting stats from account");
+		console.log("Getting stats from account <"+docCookies.getItem("username")+">");
 		stats = getUsageStats(docCookies.getItem("username"));
 		isSignedIn = true;
 	}else{
