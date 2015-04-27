@@ -6,7 +6,7 @@
 	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
 			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-			<script src="cookies.js"></script>
+			<script src="Cookies.js"></script>
 			<script>
 				var map;
 				var markers = [];
@@ -30,6 +30,8 @@
 							}
 							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
 							if(isSignedIn) updateStats(user, "markers_created");
+						var snd = new Audio("Sounds/cymbal3.wav");
+						snd.play();
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
 						
@@ -54,7 +56,11 @@
 							console.log("Returned: " + data);
 							console.log("Saved marker location (lat="+location.lat()+", lng="+location.lng()+", username="+user+", type="+markerType+") to database");
 						});
-				 				
+
+						
+
+						
+										 				
 						var iconPath = "";
 						switch(markerType){
 							case 1:
@@ -72,9 +78,12 @@
 							labelContent: user,
 							labelClass: "labels" // the CSS class for the label
 			      		})};
+
 						
 						google.maps.event.addListener(marker.labelMarker, 'dblclick', function(event) {
 							marker.labelMarker.setMap(null);
+							var snd = new Audio("Sounds/PickedUp.mp3");
+							snd.play();
 							$.post("ClearMarker.php", marker.assignedLocation, function(data){
 								console.log("Clearing marker: lat="+marker.assignedLocation.lat+", lng=" + marker.assignedLocation.lng);
 								console.log("Returned: " + data);
@@ -109,7 +118,7 @@
 	</head>
 	
 	<body>
-		<a href="index.html"><img src="Images/Home.png" style="width:70px;height:70px;border:0"></a>
+		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
 		<header id="header"><h1>Map</h1></header>
 		<div id="googleMap"></div>
 	</body>

@@ -30,6 +30,8 @@
 							}
 							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
 							if(isSignedIn) updateStats(user, "markers_created");
+						var snd = new Audio("Sounds/FoundTrash.wav");
+						snd.play();
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
 						
@@ -54,7 +56,11 @@
 							console.log("Returned: " + data);
 							console.log("Saved marker location (lat="+location.lat()+", lng="+location.lng()+", username="+user+", type="+markerType+") to database");
 						});
-				 				
+
+						
+
+						
+										 				
 						var iconPath = "";
 						switch(markerType){
 							case 1:
@@ -72,9 +78,12 @@
 							labelContent: user,
 							labelClass: "labels" // the CSS class for the label
 			      		})};
+
 						
 						google.maps.event.addListener(marker.labelMarker, 'dblclick', function(event) {
 							marker.labelMarker.setMap(null);
+							var snd = new Audio("Sounds/PickedUp.mp3");
+							snd.play();
 							$.post("ClearMarker.php", marker.assignedLocation, function(data){
 								console.log("Clearing marker: lat="+marker.assignedLocation.lat+", lng=" + marker.assignedLocation.lng);
 								console.log("Returned: " + data);
