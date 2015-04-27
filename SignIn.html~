@@ -10,7 +10,11 @@
 	</head>
 	
 	<body>
+<<<<<<< HEAD
 		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0;float:left"></a>
+=======
+		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
+>>>>>>> e305aeabdb7487a52c87955018bfd20d8c828134
 		<header><h1>Sign In</h1></header>
 		
 		<form>

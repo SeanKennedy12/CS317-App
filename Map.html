@@ -40,7 +40,11 @@
 							}
 							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
 							if(isSignedIn) updateStats(user, "markers_created");
+<<<<<<< HEAD
 						var snd = new Audio("Sounds/FoundTrash.wav");
+=======
+						var snd = new Audio("Sounds/placeMarker.wav");
+>>>>>>> e305aeabdb7487a52c87955018bfd20d8c828134
 						snd.play();
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
