@@ -3,14 +3,13 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="Profile.css">
+	<link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
+        <link rel="apple-touch-icon" href="Images/MainIcon.png" />
+        <link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
 	</head>
 	
 	<body>
-<<<<<<< HEAD
-            <span><a href="index.html"><img src="Images/back-512.png" style="float: left;width:50px;height:50px;border:0;float:left"></a></span>
-=======
-            <span><a href="index.html"><img src="Images/back-512.png" style="float: left;width:50px;height:50px;border:0"></a></span>
->>>>>>> e305aeabdb7487a52c87955018bfd20d8c828134
+            <span><a href="index.html"><img src="Images/back-512.png" style="float: left;width:50px;height:50px;border:1;float:left; PADDING-LEFT: 5px"></a></span>
 		<header id="header">
                 <h1>Profile</h1>
                 </header>
@@ -137,8 +136,4 @@
                         </div>
                 </div>
 	</body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> e305aeabdb7487a52c87955018bfd20d8c828134
