@@ -18,10 +18,10 @@ body {
 
 img.logo {
     	display: block;
+	margin-top: 0;
     	margin-left: auto;
     	margin-right: auto;
 	width: 80%;
-}
 
 #mainDiv {
 	color: white;
@@ -34,3 +34,4 @@ p.mainDivItem {
 	font-size: 1.5rem;
     font-weight: bold;
 }
+

@@ -4,9 +4,13 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="SignIn.css">
+        <link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
+        <link rel="apple-touch-icon" href="Images/MainIcon.png" />
+        <link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
 		<script src="cookies.js"></script>
-		<script src="SignIn.js"></script>
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="setBGC.js"></script>
+		<script src="SignIn.js"></script>
 	</head>
 	
 	<body>
@@ -14,7 +18,7 @@
 		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0;float:left"></a>
 =======
 		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
->>>>>>> e305aeabdb7487a52c87955018bfd20d8c828134
+>>>>>>> davidBranch2
 		<header><h1>Sign In</h1></header>
 		
 		<form>

@@ -3,6 +3,7 @@
 		<meta charset="utf-8">
 	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	    	<link rel="stylesheet" type="text/css" href="Map.css">
+<<<<<<< HEAD
        		<link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
         	<link rel="apple-touch-icon" href="Images/MainIcon.png" />
         	<link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
@@ -10,6 +11,14 @@
 			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 			<script src="Cookies.js"></script>
+=======
+	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
+			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
+			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+			<script src="cookies.js"></script>
+			<script src="setBGC.js"></script>
+			<script src="AchievementFunctions.js"></script>
+>>>>>>> davidBranch2
 			<script>
 				var map;
 				var markers = [];
@@ -39,11 +48,19 @@
 							    user = "anonymous";
 							}
 							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
+<<<<<<< HEAD
 							if(isSignedIn) updateStats(user, "markers_created");
 
 						var snd = new Audio("Sounds/FoundTrash.wav");
 
 						snd.play();
+=======
+							if(isSignedIn) {
+							    updateStats(user, "markers_created");
+							}else{
+							    updateCookieStats("markers_created");
+							}
+>>>>>>> davidBranch2
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
 						
@@ -100,7 +117,11 @@
 								console.log("Clearing marker: lat="+marker.assignedLocation.lat+", lng=" + marker.assignedLocation.lng);
 								console.log("Returned: " + data);
 							});
-							if(docCookies.hasItem("username")) updateStats(docCookies.getItem("username"), "markers_cleared");
+							if(docCookies.hasItem("username")) {
+								updateStats(docCookies.getItem("username"), "markers_cleared");
+							}else{
+								updateCookieStats("markers_cleared");
+							}
 						});
 					/*markers.push([location.lat(), location.lng()]);
 					for(i = 0; i < markers.length; i++) {
@@ -117,6 +138,7 @@
 						}
 					}*/
 			    }
+<<<<<<< HEAD
 					
 				function updateStats(user, stat){
 					$.post("UpdateUsageStats.php", {username: user, stat_to_update: stat}, function(data){
@@ -124,13 +146,20 @@
 							console.log("Returned: " + data);
 					});
 				}
+=======
+				
+>>>>>>> davidBranch2
 				google.maps.event.addDomListener(window, 'load', initialize);
 
 			</script>
 	</head>
 	
 	<body>
+<<<<<<< HEAD
 		<a href="index.html"><img src="Images/back-512.png"  style="width:70px;height:70px;border:0;float:left"></a>
+=======
+		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
+>>>>>>> davidBranch2
 		<header id="header"><h1>Map</h1></header>
 		<div id="googleMap"></div>
 	</body>

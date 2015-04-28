@@ -23,6 +23,7 @@ header {
     border: 1rem;
     font-family: Arial Black, Charcoal, sans-serif;
     font-size: 2rem;
+    font-weight: bold;
 }
 
 div {
@@ -63,4 +64,8 @@ div {
  border-bottom: 3rem solid orange;   
  font-size: 1.0rem;
  color: darkslategrey;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> davidBranch2

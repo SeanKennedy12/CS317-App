@@ -12,6 +12,7 @@
 		
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="cookies.js"></script>
+		<script src="setBGC.js"></script>
 		<script src="start.js"></script>
 		<script src="GarbageModel.js"></script>
     	<script src="GarbageView.js"></script>
@@ -19,8 +20,13 @@
 	</head>
 
 	<body>
+<<<<<<< HEAD
            <span><a href="Profile.html"><img src="Images/user.png" style="width:50px;height:50px;border:0;float:left;"></a></span>
 		<img class="logo" src ="Images/logo.png">
+=======
+           <span id="profileIcon"><a href="Profile.html"><img src="Images/user.png" style="float: left;width:50px;height:50px;border:0;"></a>Profile</span>
+		<header><h1>Garbage</h1></header>
+>>>>>>> davidBranch2
 		<div id="mainDiv">
 			<p class="mainDivItem" id="signIn">Sign In</p>
 			<p class="mainDivItem" id="map">Map<p>

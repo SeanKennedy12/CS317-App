@@ -3,12 +3,12 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="Settings.css">
-        <link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
-        <link rel="apple-touch-icon" href="Images/MainIcon.png" />
-        <link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="cookies.js"></script>
+		<script src="setBGC.js"></script>
 	<script>
  		function changeBGC(color){
- 	 	document.body.style.backgroundColor = color;
+			document.body.style.backgroundColor = color;
 		}
 	</script>
 	</head>
@@ -20,7 +20,7 @@
 		<div>
 			Background Colour:
 		</div>
-		<div>
+		<div id='coloursDiv'>
 				<input type="image" src="Images/GreyIcon.jpg" width="30" height="30" onclick='changeBGC("#95a5a6");console.log(docCookies.setItem("bgc", "#95a5a6", Infinity));console.log(docCookies.hasItem("bgc"));return false' ">
 				<input type="image" src="Images/RedIcon.jpg" width="30" height="30" onclick="changeBGC('#c0392b');docCookies.setItem('bgc', '#c0392b', Infinity);return false">
 				<input type="image" src="Images/BlueIcon.jpg" width="30" height="30" onclick="changeBGC('#3498db');docCookies.setItem('bgc', '#3498db', Infinity);return false">
@@ -28,6 +28,7 @@
 				<input type="image" src="Images/NightIcon.jpg" width="30" height="30" onclick="changeBGC('#2c3e50');docCookies.setItem('bgc', '#2c3e50', Infinity);return false">
 				<input type="image" src="Images/OrangeIcon.jpg" width="30" height="30" onclick="changeBGC('#FFA500');docCookies.setItem('bgc', '#FFA500', Infinity);return false">
 		</div>
+
 	
 
 	</body>
