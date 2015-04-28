@@ -3,10 +3,18 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="Settings.css">
+<<<<<<< HEAD
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="cookies.js"></script>
 		<script src="setBGC.js"></script>
+=======
+        <link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="cookies.js"></script>
+	<script src="setBGC.js"></script>
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032
 	<script>
+
  		function changeBGC(color){
 			document.body.style.backgroundColor = color;
 		}

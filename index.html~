@@ -20,13 +20,8 @@
 	</head>
 
 	<body>
-<<<<<<< HEAD
-           <span><a href="Profile.html"><img src="Images/user.png" style="width:50px;height:50px;border:0;float:left;"></a></span>
+           <span id="profileIcon"><a href="Profile.html"><img src="Images/user.png" style="float: left;width:50px;height:50px;border:0;"></a></span>
 		<img class="logo" src ="Images/logo.png">
-=======
-           <span id="profileIcon"><a href="Profile.html"><img src="Images/user.png" style="float: left;width:50px;height:50px;border:0;"></a>Profile</span>
-		<header><h1>Garbage</h1></header>
->>>>>>> davidBranch2
 		<div id="mainDiv">
 			<p class="mainDivItem" id="signIn">Sign In</p>
 			<p class="mainDivItem" id="map">Map<p>

@@ -46,6 +46,5 @@ function GarbageView() {
     
 
     this.init = function () {
-
     };
 }

@@ -4,24 +4,23 @@
 		<meta charset="utf-8">
     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     		<link rel="stylesheet" type="text/css" href="Register.css">
-<<<<<<< HEAD
-       		<link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
-        	<link rel="apple-touch-icon" href="Images/MainIcon.png" />
-        	<link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
-=======
+
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
->>>>>>> davidBranch2
 			<script src="cookies.js"></script>
 			<script src="setBGC.js"></script>
 			<script src="Register.js"></script>
+<<<<<<< HEAD
+=======
+			<script src="setBGC.js"></script>
+			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+			
+
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032
 	</head>
 	
 	<body>
-<<<<<<< HEAD
 		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0;float:left"></a>
-=======
-		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
->>>>>>> davidBranch2
+
 		<header><h1>Register</h1></header>
 
 		<form>

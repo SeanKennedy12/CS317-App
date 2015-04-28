@@ -22,6 +22,9 @@ if($stat == "checked_about"){
 	$query = mysql_query('UPDATE usage_stats SET '.$stat.'='.($current_val + 1).' WHERE username="'.$_POST['username'].'";'); 
 	echo $current_val + 1;
 }
+<<<<<<< HEAD
 
 ?> 
-
+=======
+?> 
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032

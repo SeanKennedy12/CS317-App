@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-<html>
-	<head>
-		<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    	<link rel="stylesheet" type="text/css" href="Welcome.css">
-	</head>
-	
-	<body>
-		<header><h1>Welcome back, [INSERT USERNAME HERE]</h1></header>
-                
-                <div>
-                    <a href="index.html"><input type="submit" value="Continue" id="loginButton"></a>
-                </div>
-	</body>
-=======
+
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -31,5 +17,5 @@
                     <a href="index.html"><input type="submit" value="Continue" id="loginButton"></a>
                 </div>
 	</body>
->>>>>>> davidBranch2
 </html>
+

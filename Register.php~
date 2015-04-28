@@ -16,11 +16,18 @@ if($username_len >= 4 and $username_len <= 32 and $password_len >= 8 and $passwo
 	echo 'Invalid character length of user/pass caught by php: username_len='.username_len.', password_len='.password_len.'...';
 	echo 'username_min='.$username_min.', username_max='.$username_max.', password_min='.$password_min.', password_max='.$password_max;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032
 function continueRegistration(){
 	$servername = "devweb2014.cis.strath.ac.uk";
 	$username = "psb12191";
 	$password = "uanoneph";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032
 	// Create connection
 	$conn = mysql_connect($servername, $username, $password);
 	$db = mysql_select_db($username);
@@ -28,7 +35,10 @@ function continueRegistration(){
 		echo(mysql_error());
 		die(mysql_error());
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032
 	//Check if account with given username already exists
 	$query = mysql_query('SELECT * FROM app_accounts WHERE username="'.$_POST['username'].'";');
 	$row = mysql_fetch_array($query);
@@ -40,7 +50,11 @@ function continueRegistration(){
 		echo '0';
 	}
 }
+<<<<<<< HEAD
 
 
 
 ?> 
+=======
+?> 
+>>>>>>> 8cc6981cc6a3d0a2c0f70b0193468c5b663b4032
