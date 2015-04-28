@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    
+}
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+	background: #FFA500;
+}
+
+header {
+    color: white;
+    text-align: center;
+    padding: 0.2rem; 
+    border: 1rem;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+div{
+    text-align: center;
+}
