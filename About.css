@@ -36,31 +36,31 @@ div {
 }
 
 #one {
- border-bottom: 1.6rem solid orange;   
+ border-bottom: 1.6rem solid background;   
 }
 
 #two {
- border-bottom: 1.6rem solid orange;   
+ border-bottom: 1.6rem solid background;   
 }
 
 #three {
- border-bottom: 1.6rem solid orange;   
+ border-bottom: 1.6rem solid background;   
 }
 
 #four {
- border-bottom: 1.6rem solid orange;   
+ border-bottom: 1.6rem solid background;   
 }
 
 #five {
- border-bottom: 1.6rem solid orange;   
+ border-bottom: 1.6rem solid background;   
 }
 
 #six {
- border-bottom: 1.6rem solid orange;     
+ border-bottom: 1.6rem solid background;     
 }
 
 #authors {
- border-bottom: 3rem solid orange;   
+ border-bottom: 3rem solid background;   
  font-size: 1.0rem;
  color: darkslategrey;
 }
