@@ -42,30 +42,31 @@ div {
   color: white;
   font-size: 1.0rem;
   font-weight: bold;
-  border: 5px solid gray;
+  padding: 5px;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 10px;
 }
 
 #text1 {
- border-bottom: 0.8rem solid orange;   
+ padding-top: 1.5rem;
+ padding-bottom: 0.8rem;  
 }
 
 #text2 {
- border-bottom: 0.8rem solid orange;   
+ padding-bottom: 0.8rem;  
 }
 
 #text3 {
- border-bottom: 0.8rem solid orange;   
+  padding-bottom: 0.8rem;
 }
 
 #text4 {
- border-bottom: 0.8rem solid orange;   
+ padding-bottom: 0.8rem;  
 }
 
 #text5 {
- border-bottom: 0.8rem solid orange;   
+ padding-bottom: 0.8rem; 
 }
 
 .yellowText {
