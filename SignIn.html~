@@ -28,7 +28,7 @@
 		</div>
 
 		<div id="mainDiv">		
-			<form style="padding: 1rem;">
+			<form>
 				<label style="padding: 1rem;">Username: </label>
 				<input type="text" id="login_username" placeholder="Username" required><br>
 				<label style="padding: 1rem;">Password: </label>

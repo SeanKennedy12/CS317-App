@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    
+}
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    font-size: 3vh;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+	background: #FFA500;
+}
+
+.header {
+    color: white;
+    height: 3.25rem;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: #F7D708;
+}
+
+.header img {
+  float: left;
+  height: 100%;
+}
+
+.header h1 {
+  margin-left: 5%;
+}
+
+div {
+    color: white;
+    text-align: center;
+   // padding: 1rem;
+    border: 1rem;
+    font-family: sans-serif;
+    font-size: 0.6rem;
+    
+}
+
+#achievementBox {
+  text-align: center;
+  //width: 100%;
+  height: 12%;
+  color: white;
+  font-size: 1.0rem;
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+#text1 {
+ padding-top: 1.5rem;
+ padding-bottom: 0.8rem;
+}
+
+#text2 {
+ padding-bottom: 0.8rem;
+}
+
+#text3 {
+ padding-bottom: 0.8rem;
+}
+
+#text4 {
+ padding-bottom: 0.8rem; 
+}
+
+#text5 {
+ border-bottom: 0.8rem solid orange;   
+}
+
+.yellowText {
+   color: yellow; 
+}

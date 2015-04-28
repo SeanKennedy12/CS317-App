@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    
+}
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    font-size: 3vh;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+	background: #FFA500;
+}
+
+form {
+	text-align: center
+}
+
+#registerDiv {
+	color: white;
+	text-align: center;
+	padding: 2rem;
+}
+
+.header {
+    color: white;
+    height: 3.25rem;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: #F7D708;
+}
+
+.header img {
+  float: left;
+  height: 100%;
+}
+
+.header h1 {
+  margin-left: 5%;
+  align-content: center;
+}
+
+#mainDiv {
+	color: white;
+	align-content: center;
+	padding: 1rem;
+}

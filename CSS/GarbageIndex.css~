@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    
+}
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    font-size: 3vh;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+	background: #FFA500;
+}
+
+.header {
+    color: white;
+    height: 3.25rem;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: #F7D708;
+}
+
+.header img {
+  float: left;
+  height: 100%;
+}
+
+.header h1 {
+  margin-left: 15%;
+}
+
+#mainDiv {
+	color: white;
+	text-align: center;
+	padding: 1rem;
+}
+
+p.mainDivItem {
+	padding: 0.8rem;
+	font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#profileIcon{
+	font-size: 1.5rem;
+	color: white;
+}
+
+#header-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#header-nav li {
+	float: left;
+}
+
+#header-nav a {
+	display: block;
+	width: 3.33rem;
+	
+}
