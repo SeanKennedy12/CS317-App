@@ -1,21 +1,33 @@
 <html>
 	<head>
-		<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    	<link rel="stylesheet" type="text/css" href="Profile.css">
-		
+		<title>Trash Master 3000 - Profile</title>
+    	
+    	<meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+      <link rel="icon" sizes="192x192" href="Images/icon.jpg" />
+      <link rel="apple-touch-icon" href="Images/icon.jpg" />
+      <link rel="shortcut icon" href="Images/icon.jpg" type="image/x-icon" />
+    	<link rel="stylesheet" type="text/css" href="CSS/Profile.css">
+
+		<!-- Imported Scripts -->
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script src="cookies.js"></script>
-		<script src="setBGC.js"></script>
-		<script src="AchievementFunctions.js"></script>
-		<script src="Profile.js"></script>
+		
+		<!-- Our Scripts -->
+		<script src="Javascript/cookies.js"></script>
+		<script src="Javascript/setBGC.js"></script>
+		<script src="Javascript/Chat.js"></script>
+		<script src="Javascript/AchievementFunctions.js"></script>
+		<script src="Javascript/Profile.js"></script>
 	</head>
 	
 	<body>
-            <span><a href="index.html"><img src="Images/back-512.png" style="float: left;width:50px;height:50px;border:0"></a></span>
-		<header id="header">
-                <h1>Profile</h1>
-                </header>
+		<div class="header">
+			<a href="index.html"><img src="Images/back-512.png" alt="Show"></a>
+			<h1 id="title">Profile</h1>
+		</div>
                 <div id="mainDiv">
                         <p class="ParagraphText" id="text1"><span class ="yellowText">Number of posts in chat</span>: 0</p>
 			<p class="ParagraphText" id="text2"><span class ="yellowText">Number of items picked up</span>: 0</p>

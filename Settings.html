@@ -1,32 +1,44 @@
 <html>
 	<head>
-		<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    	<link rel="stylesheet" type="text/css" href="Settings.css">
+		<title>Trash Master 3000 - Settings</title>
+    	
+    	<meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+      <link rel="icon" sizes="192x192" href="Images/icon.jpg" />
+      <link rel="apple-touch-icon" href="Images/icon.jpg" />
+      <link rel="shortcut icon" href="Images/icon.jpg" type="image/x-icon" />
+    	<link rel="stylesheet" type="text/css" href="CSS/Settings.css">
+
+		<!-- Imported Scripts -->
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script src="cookies.js"></script>
-		<script src="setBGC.js"></script>
-	<script>
+		
+		<!-- Our Scripts -->
+		<script src="Javascript/cookies.js"></script>
+		<script src="Javascript/setBGC.js"></script>
+		<script>
  		function changeBGC(color){
 			document.body.style.backgroundColor = color;
 		}
-	</script>
+		</script>
 	</head>
 	
 	<body>
-		<a href="index.html"><img src="Images/back-512.png" style="width:70px;height:70px;border:0"></a>
-		<header><h1>Settings</h1></header>
+		<div class="header">
+			<a href="index.html"><img src="Images/back-512.png" alt="Show"></a>
+			<h1 id="title">Settings</h1>
+		</div>
 
-<div>
-		Change background colour:
-		<button type = "button" width="3000" height="50" type='button' onclick='changeBGC("#95a5a6");console.log(docCookies.setItem("bgc", "#95a5a6", Infinity));console.log(docCookies.hasItem("bgc"));return false' />Grey</button>
-		<!--<button type = "button" width="3000" height="50" type='button' onclick="changeBGC('#FFFFFF');return false" />White</button>-->
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#c0392b');docCookies.setItem('bgc', '#c0392b', Infinity);return false" />Red</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#3498db');docCookies.setItem('bgc', '#3498db', Infinity);return false" />Blue</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#9b59b6');docCookies.setItem('bgc', '#9b59b6', Infinity);return false" />Purple</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#2c3e50');docCookies.setItem('bgc', '#2c3e50', Infinity);return false" />Night</button>
-		<button type = "button" width="255" height="38" type="button" onclick="changeBGC('#FFA500');docCookies.setItem('bgc', '#FFA500', Infinity);return false" />Orange</button>
-</div>
+		<div id="mainDiv">
+			<p class="ParagraphText">Change background colour:</p>
+			<button id = "colourbutton" type="button" onclick="changeBGC('#c0392b');docCookies.setItem('bgc', '#c0392b', Infinity);return false" />Red</button>
+			<button id = "colourbutton" type="button" onclick="changeBGC('#3498db');docCookies.setItem('bgc', '#3498db', Infinity);return false" />Blue</button>
+			<button id = "colourbutton" type="button" onclick="changeBGC('#9b59b6');docCookies.setItem('bgc', '#9b59b6', Infinity);return false" />Purple</button>
+			<button id = "colourbutton" type="button" onclick="changeBGC('#2c3e50');docCookies.setItem('bgc', '#2c3e50', Infinity);return false" />Night</button>
+			<button id = "colourbutton" type="button" onclick="changeBGC('#FFA500');docCookies.setItem('bgc', '#FFA500', Infinity);return false" />Orange</button>
+		</div>
 	
 
 	</body>

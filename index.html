@@ -1,30 +1,35 @@
-
 <html>
-
 	<head>
-		<!--Think of name for app???-->
-    	<title>Garbage</title>
+    	<title>Trash Master 3000</title>
+    	
     	<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="icon" sizes="192x192" href="Images/icon.jpg" />
-        <link rel="apple-touch-icon" href="Images/icon.jpg" />
-        <link rel="shortcut icon" href="Images/icon.jpg" type="image/x-icon" />
-    	<link rel="stylesheet" type="text/css" href="GarbageIndex.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+      <link rel="icon" sizes="192x192" href="Images/icon.jpg" />
+      <link rel="apple-touch-icon" href="Images/icon.jpg" />
+      <link rel="shortcut icon" href="Images/icon.jpg" type="image/x-icon" />
+    	<link rel="stylesheet" type="text/css" href="CSS/GarbageIndex.css">
 		
+		<!-- Imported Scripts -->
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script src="cookies.js"></script>
-		<script src="setBGC.js"></script>
-		<script src="start.js"></script>
-		<script src="GarbageModel.js"></script>
-    	<script src="GarbageView.js"></script>
-    	<script src="GarbageController.js"></script>
+		
+		<!-- Our Scripts -->
+		<script src="Javascript/cookies.js"></script>
+		<script src="Javascript/setBGC.js"></script>
+		<script src="Javascript/start.js"></script>
+		<script src="Javascript/GarbageModel.js"></script>
+    	<script src="Javascript/GarbageView.js"></script>
+    	<script src="Javascript/GarbageController.js"></script>
 	</head>
 
 	<body>
-           <span id="profileIcon"><a href="Profile.html"><img src="Images/user.png" style="float: left;width:50px;height:50px;border:0;"></a>Profile</span>
-		<header><h1>Garbage</h1></header>
+		<div class="header">
+			<a href="Profile.html"><img src="Images/user.png" alt="Show"></a>
+			<img src="Images/logo.png" alt="" align="center">
+		</div>
+		
 		<div id="mainDiv">
 			<p class="mainDivItem" id="signIn">Sign In</p>
 			<p class="mainDivItem" id="map">Map<p>
