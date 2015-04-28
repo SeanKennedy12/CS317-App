@@ -10,11 +10,12 @@ function attemptSignIn(){
 		if(current_level >= 0){
 			docCookies.setItem("username", current_username);
 			docCookies.setItem("level", current_level);
-			alert('Successfully signed in as '+current_username);
-			console.log("Cookie AFTER sign-in: ---" + document.cookie + "---");
-		}else{
-			alert("Username/password not recognised!");
-			console.log("Cookie AFTER sign-in: ---" + document.cookie + "---");
+			//alert('Successfully signed in as '+current_username);
+			window.location.href = "welcome.html"
+		}else if(current_level == -1){
+			alert("Username not recognised!");
+		}else if(current_level == -2){
+			alert("Incorrect password!");
 		}
 	});
 }
