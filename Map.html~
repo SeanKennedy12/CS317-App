@@ -3,6 +3,9 @@
 		<meta charset="utf-8">
 	    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	    	<link rel="stylesheet" type="text/css" href="Map.css">
+       		<link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
+        	<link rel="apple-touch-icon" href="Images/MainIcon.png" />
+        	<link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
 	    	<script src="https://maps.googleapis.com/maps/api/js"></script>
 			<script src="https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
 			<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -37,11 +40,9 @@
 							}
 							var userLevel = docCookies.hasItem("level") ? parseInt(docCookies.getItem("level")) : 0;
 							if(isSignedIn) updateStats(user, "markers_created");
-<<<<<<< HEAD
+
 						var snd = new Audio("Sounds/FoundTrash.wav");
-=======
-						var snd = new Audio("Sounds/PlaceMarker.wav");
->>>>>>> e305aeabdb7487a52c87955018bfd20d8c828134
+
 						snd.play();
 		          			placeMarker(event.latLng, user, userLevel);
 		         	});
