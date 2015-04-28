@@ -16,6 +16,12 @@ body {
 	background: #FFA500;
 }
 
+div {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
 header {
     color: white;
     text-align: center;
