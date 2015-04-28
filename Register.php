@@ -6,7 +6,7 @@ $username_min = 4;
 $username_max = 32;
 $password_min = 6;
 $password_max = 32;
-if($username_len >= 4 and $username_len <= 32 and $password_len >= 8 and $password_len <= 32){
+if($username_len >= $username_min and $username_len <= $username_max and $password_len >= $password_min and $password_len <= $password_max){
     continueRegistration();
 }else{
 	/*
@@ -16,6 +16,7 @@ if($username_len >= 4 and $username_len <= 32 and $password_len >= 8 and $passwo
 	echo 'Invalid character length of user/pass caught by php: username_len='.username_len.', password_len='.password_len.'...';
 	echo 'username_min='.$username_min.', username_max='.$username_max.', password_min='.$password_min.', password_max='.$password_max;
 }
+
 function continueRegistration(){
 	$servername = "devweb2014.cis.strath.ac.uk";
 	$username = "psb12191";

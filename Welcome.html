@@ -3,13 +3,14 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     	<link rel="stylesheet" type="text/css" href="Welcome.css">
-        <link rel="icon" sizes="192x192" href="Images/MainIcon.png" />
-        <link rel="apple-touch-icon" href="Images/MainIcon.png" />
-        <link rel="shortcut icon" href="Images/MainIcon.png" type="image/x-icon" />
+		<script src="cookies.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="setBGC.js"></script>
+		<script src="WelcomeMessage.js"></script>
 	</head>
 	
 	<body>
-		<header><h1>Welcome back, [INSERT USERNAME HERE]</h1></header>
+		<header><h1 id="welcome_message">Welcome back, </h1></header>
                 
                 <div>
                     <a href="index.html"><input type="submit" value="Continue" id="loginButton"></a>
